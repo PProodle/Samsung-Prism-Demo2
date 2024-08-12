@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .left, .right {
+            width: 48%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .main-title {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .title {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        video {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-title">Sample 3</div>
+    <div class="container">
+        <div class="left">
+            <div class="title">Mixture Audio</div>
+            <video controls>
+                <source src="mixture-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="button-container">
+                <button class="button" onclick="window.location.href='sample2.html'">Previous Page</button>
+                <button class="button" onclick="window.location.href='sample4.html'">Next Page</button>
+            </div>
+        </div>
+        <div class="right">
+            <div>
+                <div class="title">Speaker 1</div>
+                <video controls>
+                    <source src="speaker1-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div>
+                <div class="title">Speaker 2</div>
+                <video controls>
+                    <source src="speaker2-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
