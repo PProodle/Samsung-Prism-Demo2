@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample 2</title>
+    <title>Sample 5</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,7 +51,7 @@
             margin-bottom: 20px;
             color: #333;
         }
-        video {
+        video, audio {
             width: 100%;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -86,25 +86,72 @@
             </video>
             <div class="button-container">
                 <button class="button" onclick="window.location.href='sample4.html'">Previous Page</button>
-                <button class="button" onclick="window.location.href='sample1.html'">First Page</button>
             </div>
         </div>
         <div class="right">
             <div>
                 <div class="title">Speaker 1</div>
-                <video controls>
+                <video id="speaker1-video" controls>
                     <source src="speaker1-video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                <audio id="speaker1-audio">
+                    <source src="speaker1-audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                </audio>
             </div>
             <div>
                 <div class="title">Speaker 2</div>
-                <video controls>
+                <video id="speaker2-video" controls>
                     <source src="speaker2-video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                <audio id="speaker2-audio">
+                    <source src="speaker2-audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                </audio>
             </div>
         </div>
     </div>
+
+    <script>
+        // Synchronize Speaker 1 video and audio
+        const speaker1Video = document.getElementById('speaker1-video');
+        const speaker1Audio = document.getElementById('speaker1-audio');
+
+        speaker1Video.addEventListener('play', () => {
+            speaker1Audio.currentTime = speaker1Video.currentTime;
+            speaker1Audio.play();
+        });
+
+        speaker1Video.addEventListener('pause', () => {
+            speaker1Audio.pause();
+        });
+
+        speaker1Video.addEventListener('timeupdate', () => {
+            if (!speaker1Video.paused) {
+                speaker1Audio.currentTime = speaker1Video.currentTime;
+            }
+        });
+
+        // Synchronize Speaker 2 video and audio
+        const speaker2Video = document.getElementById('speaker2-video');
+        const speaker2Audio = document.getElementById('speaker2-audio');
+
+        speaker2Video.addEventListener('play', () => {
+            speaker2Audio.currentTime = speaker2Video.currentTime;
+            speaker2Audio.play();
+        });
+
+        speaker2Video.addEventListener('pause', () => {
+            speaker2Audio.pause();
+        });
+
+        speaker2Video.addEventListener('timeupdate', () => {
+            if (!speaker2Video.paused) {
+                speaker2Audio.currentTime = speaker2Video.currentTime;
+            }
+        });
+    </script>
 </body>
 </html>
