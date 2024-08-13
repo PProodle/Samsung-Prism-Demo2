@@ -79,7 +79,7 @@
         <div class="left">
             <div class="title">Mixture Audio</div>
             <video controls>
-                <source src="video_tracked1.mp4" type="video/mp4">
+                <source src="download.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="button-container">
@@ -91,66 +91,22 @@
             <div>
                 <div class="title">Speaker 1</div>
                 <video id="speaker1-video" controls>
-                    <source src="utkarsh highlighted vido" type="video/mp4">
+                    <source src="utk.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <audio id="speaker1-audio">
-                    <source src="utkaudio.mp3" type="audio/mp3">
-                    Your browser does not support the audio tag.
-                </audio>
+               
             </div>
             <div>
                 <div class="title">Speaker 2</div>
                 <video id="speaker2-video" controls>
-                    <source src="siddhartha highlighted video" type="video/mp4">
+                    <source src="sidt.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <audio id="speaker2-audio">
-                    <source src="sidtaudio.mp3" type="audio/mp3">
-                    Your browser does not support the audio tag.
-                </audio>
+                
             </div>
         </div>
     </div>
 
-    <script>
-        // Synchronize Speaker 1 video and audio
-        const speaker1Video = document.getElementById('speaker1-video');
-        const speaker1Audio = document.getElementById('speaker1-audio');
-
-        speaker1Video.addEventListener('play', () => {
-            speaker1Audio.currentTime = speaker1Video.currentTime;
-            speaker1Audio.play();
-        });
-
-        speaker1Video.addEventListener('pause', () => {
-            speaker1Audio.pause();
-        });
-
-        speaker1Video.addEventListener('timeupdate', () => {
-            if (!speaker1Video.paused) {
-                speaker1Audio.currentTime = speaker1Video.currentTime;
-            }
-        });
-
-        // Synchronize Speaker 2 video and audio
-        const speaker2Video = document.getElementById('speaker2-video');
-        const speaker2Audio = document.getElementById('speaker2-audio');
-
-        speaker2Video.addEventListener('play', () => {
-            speaker2Audio.currentTime = speaker2Video.currentTime;
-            speaker2Audio.play();
-        });
-
-        speaker2Video.addEventListener('pause', () => {
-            speaker2Audio.pause();
-        });
-
-        speaker2Video.addEventListener('timeupdate', () => {
-            if (!speaker2Video.paused) {
-                speaker2Audio.currentTime = speaker2Video.currentTime;
-            }
-        });
-    </script>
+    
 </body>
 </html>
